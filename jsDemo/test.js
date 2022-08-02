@@ -51,11 +51,45 @@
 
 // changeDate("2021-1-21","2022-02-04");
 
-var array = [1, [2, [3, [4, 5]]]];
-// reduce
-function flatDeep2(arr){
-	return arr.reduce((pre, next) => {
-    return pre.concat(Array.isArray(next)? flatDeep2(next) : next);
-  }, [])
+// var array = [1, [2, [3, [4, 5]]]];
+// // reduce
+// function flatDeep2(arr){
+// 	return arr.reduce((pre, next) => {
+//     return pre.concat(Array.isArray(next)? flatDeep2(next) : next);
+//   }, [])
+// }
+// console.log(flatDeep2(array));
+
+var pivotIndex = function(nums) {
+  if(nums < 2) return -1;
+  let l=0, r=nums.length-1;
+  let leftArr = [nums[l]], rightArr = [nums[r]];
+  while(l < r) {
+      if(typeof(addNum(leftArr, rightArr)) === 'number') {
+          console.log(leftArr, rightArr);
+          return l;
+      } else if(addNum(leftArr, rightArr) === 'leftMax'){
+          r -= 1;
+          rightArr.push(nums[r]);
+      } else {
+          l += 1;
+          leftArr.push(nums[l])
+      }
+  }
+  return -1;
+};
+function addNum(left, right) {
+  leftSum = 0, rightSum = 0;
+  for(let item of left) {
+      leftSum += item;
+  }
+  for(let item of right) {
+      rightSum += item;
+  }
+  if(leftSum === rightSum) {
+    return 1;
+  } else {
+    return leftSum > rightSum? 'leftMax':'rightMax'
+  }
 }
-console.log(flatDeep2(array));
+pivotIndex([1,7,3,6,5,6])

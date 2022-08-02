@@ -1,0 +1,21 @@
+{
+  "name": "fishing",
+  "version": "1.0.0",
+  "description": "摸鱼文档",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Yuiyake/Fishing.git"
+  },
+  "author": "yuiyake",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Yuiyake/Fishing/issues"
+  },
+  "homepage": "https://github.com/Yuiyake/Fishing#readme"
+}
