@@ -60,36 +60,47 @@
 // }
 // console.log(flatDeep2(array));
 
-var pivotIndex = function(nums) {
-  if(nums < 2) return -1;
-  let l=0, r=nums.length-1;
-  let leftArr = [nums[l]], rightArr = [nums[r]];
-  while(l < r) {
-      if(typeof(addNum(leftArr, rightArr)) === 'number') {
-          console.log(leftArr, rightArr);
-          return l;
-      } else if(addNum(leftArr, rightArr) === 'leftMax'){
-          r -= 1;
-          rightArr.push(nums[r]);
-      } else {
-          l += 1;
-          leftArr.push(nums[l])
-      }
-  }
-  return -1;
-};
-function addNum(left, right) {
-  leftSum = 0, rightSum = 0;
-  for(let item of left) {
-      leftSum += item;
-  }
-  for(let item of right) {
-      rightSum += item;
-  }
-  if(leftSum === rightSum) {
-    return 1;
-  } else {
-    return leftSum > rightSum? 'leftMax':'rightMax'
+// var pivotIndex = function(nums) {
+//   if(nums < 2) return -1;
+//   let l=0, r=nums.length-1;
+//   let leftArr = [nums[l]], rightArr = [nums[r]];
+//   while(l < r) {
+//       if(typeof(addNum(leftArr, rightArr)) === 'number') {
+//           console.log(leftArr, rightArr);
+//           return l;
+//       } else if(addNum(leftArr, rightArr) === 'leftMax'){
+//           r -= 1;
+//           rightArr.push(nums[r]);
+//       } else {
+//           l += 1;
+//           leftArr.push(nums[l])
+//       }
+//   }
+//   return -1;
+// };
+// function addNum(left, right) {
+//   leftSum = 0, rightSum = 0;
+//   for(let item of left) {
+//       leftSum += item;
+//   }
+//   for(let item of right) {
+//       rightSum += item;
+//   }
+//   if(leftSum === rightSum) {
+//     return 1;
+//   } else {
+//     return leftSum > rightSum? 'leftMax':'rightMax'
+//   }
+// }
+// pivotIndex([1,7,3,6,5,6])
+
+const fn = (...args) => {
+  for(const arg of args) {
+    console.log(arg);
   }
 }
-pivotIndex([1,7,3,6,5,6])
+const [a, b] = [1, 2];
+console.log(fn(`${a} + ${b} = ${a+b}`));
+
+
+
