@@ -27,6 +27,10 @@
 
 ## 状态管理
 ### Redux
+- action: 改变store的唯一方法，是全局发布的 -> store.dispatch(action)
+- reducer: 需要根据回调处理 (等同于父级方法) -> reducer(state,action) 
+  - 所有的reducer都可以捕捉到并匹配与自己相关与否，相关就拿走action中 的要素进行逻辑处理，修改store中的状态，不相关就不对state做处理原样返回。
+- store: 存档位，状态都定义在这，要更改要使用都从这定义的数据拿的
 ### Mobx
 ### Recoil
 - 基本概念
